@@ -1,0 +1,14 @@
+git init
+git remote add origin (repository address)
+(repository address) : https://github.com/aesthety/gitTest.git
+폴더>우클>git bash here
+git init
+
+git pull origin master
+
+git status :현재폴더와 깃레포지토리간의 싱크상태를 볼수 있다.
+git add . : 변경된 파일을 모두 tracking
+git commit -m "message" : 인식할 수 있는 commit을 달아준다
+git push origin master : 실제로 git push
+
+git commit부터 작동되지 않음
