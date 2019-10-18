@@ -11,3 +11,14 @@ git add . : 변경된 파일을 모두 tracking
 git commit -m "message" : 인식할 수 있는 commit을 달아준다
 git push origin master : 실제로 git push
 
+
+
+git commit -m "message"이 되지 않아 메시지를 읽어보니
+다음과 같이 해결하라고 해서 됨
+
+git config --global user.email "sunjoo@gmail.com"
+git config --global user.name "aesthety"
+git commit -m "message"
+git push origin master
+요렇게 하면 다시 수정파일이 git에 commit되어 history에서 앞의 수정버전까지 모두 확인 가능함
+엄청 편함
