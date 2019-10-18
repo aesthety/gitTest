@@ -11,4 +11,3 @@ git add . : 변경된 파일을 모두 tracking
 git commit -m "message" : 인식할 수 있는 commit을 달아준다
 git push origin master : 실제로 git push
 
-git commit부터 작동되지 않음
