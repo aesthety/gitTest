@@ -1,24 +1,39 @@
-git init
-git remote add origin (repository address)
-(repository address) : https://github.com/aesthety/gitTest.git
-폴더>우클>git bash here
-git init
+https://gitforwindows.org/ 
+https://github.com
+--------------------------------------------------------
+git설치, github에서 아이디 생성
+--------------------------------------------------------
+git bash설치 확인하고 
+git bash cmd에서 아래 내용 치고 들어감
+1. git init
+2. git remote add origin (repository address)
+   (repository address) 는 github홈페이지에서 레포지토리생성 후 받는 http주소 이다. 
+   예) https://github.com/이름/레포지토리.git
 
-git pull origin master
+3. 윈도탐색기에서 폴더>우클>git bash here
+--------------------------------------------------------
+알아두어야 할 명령어 핵심 
+--------------------------------------------------------
+1. git init
+2. git pull origin master : push전에 pull하는데, 지금은 push해놓은게 없어서 스킵
 
-git status :현재폴더와 깃레포지토리간의 싱크상태를 볼수 있다.
-git add . : 변경된 파일을 모두 tracking
-git commit -m "message" : 인식할 수 있는 commit을 달아준다
-git push origin master : 실제로 git push
+3. git status :현재폴더와 깃레포지토리간의 싱크상태를 볼수 있다.
+4. git add . : 변경된 파일을 모두 tracking
+5. git commit -m "message" : 인식할 수 있는 commit을 달아준다
+6. git push origin master : 실제로 git push
 
-
-
+--------------------------------------------
 git commit -m "message"이 되지 않아 메시지를 읽어보니
 다음과 같이 해결하라고 해서 됨
 
-git config --global user.email "sunjoo@gmail.com"
-git config --global user.name "aesthety"
-git commit -m "message"
-git push origin master
-요렇게 하면 다시 수정파일이 git에 commit되어 history에서 앞의 수정버전까지 모두 확인 가능함
-엄청 편함
+1. git config --global user.email "메일주소@gmail.com"
+2. git config --global user.name "나의깃이름"
+3. git commit -m "저장해둘 메시지"
+4. git push origin master
+
+요렇게 하면 다시 수정파일이 github홈피에 commit되어 history에서 앞의 수정버전까지 모두 확인 가능함
+버전관리가 이래서 엄청 편함
+
+------------------------------------------
+결론
+init, remote add origin, status, add . , commit과 push를 가장 많이 사용하게 됨.
