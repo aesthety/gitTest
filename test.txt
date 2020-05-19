@@ -1,39 +1,42 @@
 https://gitforwindows.org/ 
 https://github.com
 --------------------------------------------------------
-git¼³Ä¡, github¿¡¼­ ¾ÆÀÌµğ »ı¼º
+gitì„¤ì¹˜, githubì—ì„œ ì•„ì´ë”” ìƒì„±
 --------------------------------------------------------
-git bash¼³Ä¡ È®ÀÎÇÏ°í 
-git bash cmd¿¡¼­ ¾Æ·¡ ³»¿ë Ä¡°í µé¾î°¨
+git bashì„¤ì¹˜ í™•ì¸í•˜ê³  
+git bash cmdì—ì„œ ì•„ë˜ ë‚´ìš© ì¹˜ê³  ë“¤ì–´ê°
 1. git init
 2. git remote add origin (repository address)
-   (repository address) ´Â githubÈ¨ÆäÀÌÁö¿¡¼­ ·¹Æ÷ÁöÅä¸®»ı¼º ÈÄ ¹Ş´Â httpÁÖ¼Ò ÀÌ´Ù. 
-   ¿¹) https://github.com/ÀÌ¸§/·¹Æ÷ÁöÅä¸®.git
+   (repository address) ëŠ” githubí™ˆí˜ì´ì§€ì—ì„œ ë ˆí¬ì§€í† ë¦¬ìƒì„± í›„ ë°›ëŠ” httpì£¼ì†Œ ì´ë‹¤. 
+   ì˜ˆ) https://github.com/ì´ë¦„/ë ˆí¬ì§€í† ë¦¬.git
 
-3. À©µµÅ½»ö±â¿¡¼­ Æú´õ>¿ìÅ¬>git bash here
+3. ìœˆë„íƒìƒ‰ê¸°ì—ì„œ í´ë”>ìš°í´>git bash here
 --------------------------------------------------------
-¾Ë¾ÆµÎ¾î¾ß ÇÒ ¸í·É¾î ÇÙ½É 
+ì•Œì•„ë‘ì–´ì•¼ í•  ëª…ë ¹ì–´ í•µì‹¬ 
 --------------------------------------------------------
 1. git init
-2. git pull origin master : pushÀü¿¡ pullÇÏ´Âµ¥, Áö±İÀº pushÇØ³õÀº°Ô ¾ø¾î¼­ ½ºÅµ
+2. git pull origin master : pushì „ì— pullí•˜ëŠ”ë°, ì§€ê¸ˆì€ pushí•´ë†“ì€ê²Œ ì—†ì–´ì„œ ìŠ¤í‚µ
 
-3. git status :ÇöÀçÆú´õ¿Í ±ê·¹Æ÷ÁöÅä¸®°£ÀÇ ½ÌÅ©»óÅÂ¸¦ º¼¼ö ÀÖ´Ù.
-4. git add . : º¯°æµÈ ÆÄÀÏÀ» ¸ğµÎ tracking
-5. git commit -m "message" : ÀÎ½ÄÇÒ ¼ö ÀÖ´Â commitÀ» ´Ş¾ÆÁØ´Ù
-6. git push origin master : ½ÇÁ¦·Î git push
+3. git status :í˜„ì¬í´ë”ì™€ ê¹ƒë ˆí¬ì§€í† ë¦¬ê°„ì˜ ì‹±í¬ìƒíƒœë¥¼ ë³¼ìˆ˜ ìˆë‹¤.
+4. git add . : ë³€ê²½ëœ íŒŒì¼ì„ ëª¨ë‘ tracking
+5. git commit -m "message" : ì¸ì‹í•  ìˆ˜ ìˆëŠ” commitì„ ë‹¬ì•„ì¤€ë‹¤
+6. git push origin master : ì‹¤ì œë¡œ git push
 
 --------------------------------------------
-git commit -m "message"ÀÌ µÇÁö ¾Ê¾Æ ¸Ş½ÃÁö¸¦ ÀĞ¾îº¸´Ï
-´ÙÀ½°ú °°ÀÌ ÇØ°áÇÏ¶ó°í ÇØ¼­ µÊ
+git commit -m "message"ì´ ë˜ì§€ ì•Šì•„ ë©”ì‹œì§€ë¥¼ ì½ì–´ë³´ë‹ˆ
+ë‹¤ìŒê³¼ ê°™ì´ í•´ê²°í•˜ë¼ê³  í•´ì„œ ë¨
 
-1. git config --global user.email "¸ŞÀÏÁÖ¼Ò@gmail.com"
-2. git config --global user.name "³ªÀÇ±êÀÌ¸§"
-3. git commit -m "ÀúÀåÇØµÑ ¸Ş½ÃÁö"
+---
+
+
+1. git config --global user.email "ë©”ì¼ì£¼ì†Œ@gmail.com"
+2. git config --global user.name "ë‚˜ì˜ê¹ƒì´ë¦„"
+3. git commit -m "ì €ì¥í•´ë‘˜ ë©”ì‹œì§€"
 4. git push origin master
 
-¿ä·¸°Ô ÇÏ¸é ´Ù½Ã ¼öÁ¤ÆÄÀÏÀÌ githubÈ¨ÇÇ¿¡ commitµÇ¾î history¿¡¼­ ¾ÕÀÇ ¼öÁ¤¹öÀü±îÁö ¸ğµÎ È®ÀÎ °¡´ÉÇÔ
-¹öÀü°ü¸®°¡ ÀÌ·¡¼­ ¾öÃ» ÆíÇÔ
+ìš”ë ‡ê²Œ í•˜ë©´ ë‹¤ì‹œ ìˆ˜ì •íŒŒì¼ì´ githubí™ˆí”¼ì— commitë˜ì–´ historyì—ì„œ ì•ì˜ ìˆ˜ì •ë²„ì „ê¹Œì§€ ëª¨ë‘ í™•ì¸ ê°€ëŠ¥í•¨
+ë²„ì „ê´€ë¦¬ê°€ ì´ë˜ì„œ ì—„ì²­ í¸í•¨
 
 ------------------------------------------
-°á·Ğ
-init, remote add origin, status, add . , commit°ú push¸¦ °¡Àå ¸¹ÀÌ »ç¿ëÇÏ°Ô µÊ.
+ê²°ë¡ 
+init, remote add origin, status, add . , commitê³¼ pushë¥¼ ê°€ì¥ ë§ì´ ì‚¬ìš©í•˜ê²Œ ë¨.
