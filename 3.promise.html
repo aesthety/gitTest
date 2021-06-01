@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // state 파악하기 : 수행중일 때는 panding ->완료시 fulfilled->거절시 rejected
+        // producer | consumer 의 차이 이해하기
+
+        //1. producer : 만드는 즉시 수행됨. 
+        const promise = new Promise((resolve, reject) => {
+            console.log('진행중...');
+            setTimeout(() => {
+                resolve('콜백함수 호출값');
+                // reject(new Error('에러이유를 자세히 적음'))
+            }, 2000);
+        });
+
+        //2. consumer : then, catch, finally
+        promise.then(value => { //성공적으로 수행되면 처리, 값을 전달하거나 다른 promise를 전달하기도 한다. 
+                console.log(value);
+            })
+            .catch(error => { //실패하면 처리
+                console.log(error);
+            })
+            .finally(() => {
+                console.log('성공과 실패 이후 마지막으로 처리');
+            });
+
+        //3. Promise chaning
+        const fetchNumber = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(1), 1000
+            });
+        });
+        fetchNumber
+            .then(num => num * 2)
+            .then(num => num * 3)
+            .then(num => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => resolve(num - 1), 1000);
+                });
+            })
+            .then(num => console.log(num));
+        //이렇게 then을 묶어서 각기 다른 비동기처리를 할 수 있다. 
+
+        // 4. 에러 핸들링
+        const getFun1 = () => 
+            new Promise((resolve, reject) => {
+                setTimeout(() => resolve('함수처리1'), 1000);
+            });
+        
+        const getFun2 = fun1 => 
+            new Promise((resolve, reject) => {
+                setTimeout(() => reject(new Error(`error! ${fun1} => '에러함수처리2'`)), 1000);
+            });
+            
+        
+        
+        const getFun3 = fun2 =>
+            new Promise((resolve, reject)=> { 
+                setTimeout(() => resolve(`${fun2} => '결과함수처리3-여기까지오게됨'`),1000);
+                // setTimeout(() => reject(new Error(`error! ${fun2} => '에러함수처리3'`)), 2000);
+            });
+        
+
+        getFun1() 
+        .then(getFun2)
+        .catch(error =>{
+            return '에러시 다른결과출력. 즉, 여기서 catch를 쓰지 않으면, getFun2에서 에러가 발생하면서 다음으로 가지 못한다. '
+        })
+        .then(getFun3)
+        // .catch(error =>{
+            
+        //     return '에러시 reject처리'
+        // })
+        .then(console.log)
+        .catch(console.log);
+
+        //5. 콜백지옥
+        // 콜백헬을 promise chaining으로 변경
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        #slider_wrap{
+            margin:10vh auto;
+            width:1000px;
+            height: 450px;
+            border:3px solid #b696ae;
+            position:relative;
+            overflow: hidden;
+        }
+        .slider_container{
+            width:100%;           
+            position:absolute;
+        }
+        
+        .slide{
+            position: absolute;
+            width: 100%;
+            height: 450px;
+            line-height: 450px;
+            text-align: center;
+            color: #fff;
+            font-size:5.0em;
+            top:0%;
+            overflow: hidden;
+        }
+        .slider_container.animated{
+            transition:left .3s;
+        }
+        .slide:nth-child(1){background: #333;}
+        .slide:nth-child(2){background: #777;}
+        .slide:nth-child(3){background: #444;}
+        .slide:nth-child(4){background: #999;}
+        .slide:nth-child(5){background: #aaa;}
+        .prev, .next{
+            display: block;
+            position: absolute;top: 50%;left: 50%;
+            transform: translateY(-50%);
+            width: 50px;height: 50px;line-height: 50px;
+            font-size: 0.75em;
+            border-radius: 50%;
+            background: #fefefe;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,.3);
+            text-decoration: none;
+            color: #333;
+            z-index: 999999;
+            transition: all .3s;
+        }
+        .prev{margin-left: -480px;}
+        .next{margin-left: 430px;}
+        .prev.disabled, .next.disabled{display: none;}
+    </style>
+    
+</head>
+<body>
+    
+    <div id="slider_wrap">
+        <ul id="slider" class="slider_container simple_list">
+            <li class="slide">slide1</li>
+            <li class="slide">slide2</li>
+            <li class="slide">slide3</li>
+            <li class="slide">slide4</li>
+            <li class="slide">slide5</li>
+        </ul>
+        
+        
+            <a href="#" class="prev">prev</a>
+            <a href="#" class="next">next</a>
+       
+    </div>
+    <script>
+        var sliderWrapper = document.getElementById('slider_wrap'),
+            sliderContainer = document.getElementById('slider'),
+            slides = document.getElementsByClassName('slide'),
+            slideCount = slides.length,
+            currentIndex =0,
+            topHeight=0,
+            navPrev = document.getElementsByClassName('prev'),
+            navNext = document.getElementsByClassName('next');
+        console.log(slideCount);
+        slides[0].style.color ="red";
+        
+        for(let i=0; i<slideCount; i++){
+            slides[i].style.left = i*100+'%';
+        }
+
+        function gotoSlide(idx){
+            // 요기서부터 style적용이 안됨.;;
+            sliderContainer.style.left = idx * -100 + '%';
+            sliderContainer.classList.add('animated');
+            currentIndex = idx;
+
+            // updateNav();
+        }
+        function updateNav(){
+            if(currentIndex == 0){
+                navPrev.classList.add('disabled');
+            }else{
+                navPrev.classList.remove('disabled');
+            }
+            if(currentIndex == slideCount -1){
+                navNext.classList.add('disabled');
+            }else{
+                navNext.classList.remove('disabled');
+            }
+        }
+
+        navNext.
+        navPrev.addEventListener('click', function(e){
+            e.preventDefault();
+            // gotoSlide(currentIndex - 1);
+            //처음이 아니라면 이전으로 이동, 처음이라면 마지막으로 이동
+            if(currentIndex > 0){
+                gotoSlide(currentIndex - 1);
+            }else{
+                gotoSlide(slideCount - 1);
+            }
+        });
+        navNext.addEventListener('click', function(e){
+            e.preventDefault();
+            gotoSlide(currentIndex + 1);
+            if(currentIndex < slideCount -1){
+                gotoSlide(currentIndex + 1);
+            }else{
+                gotoSlide(0);
+            }
+        });
+
+        gotoSlide(0);
+    </script>
+
+</body>
+</html>
