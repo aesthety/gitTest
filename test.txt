@@ -55,7 +55,7 @@ git commit -m "first commit"
 -m 은 메세지의 준말로 뒤에 “” 안에 주고싶은 히스토리 이름을 주면 됨 (즉, 변경가능)
 
 5. Github repository와 내 로컬 프로젝트랑 연결 :
-git remote add origin https://github.com/bitnaGithub/firstproject.git
+git remote add origin https://github.com/aesthety/firstproject.git(firstproject대신 프로젝트명)
 이 명령어는 github에서 복사해서 붙여와야함
 
 6. 잘 연결됬는지 확인 (선택사항) :
@@ -75,6 +75,6 @@ git add .
 git commit -m "first commit"
 8-3. Github로 올리기
 git push origin master
-내 컴퓨터에 소스코드를 업데이트를 하고 싶으면 이 세개의 스텝만 계속 반복하면 됨.
+내 컴퓨터에 소스코드를 업데이트를 하고 싶으면 이 세개의 스텝만 계속 반복
 
  
